@@ -1,0 +1,24 @@
+ {% extends 'base.html' %}
+{% block content%}
+ <h1 class="mt-20">This is a form</h1>
+ <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{form.title.id_for_label}}">Title</label>
+      <input type="text"
+        class="form-control" value="{{obj.title}}" name="title" id="{{form.title.id_for_label}}" aria-describedby="{{form.title.id_for_label}}-error" placeholder="">
+      <small id="{{form.title.id_for_label}}-error" class="form-text text-muted">{{form.price.errors}}</small>
+    </div>
+    <div class="form-group">
+      <label for="{{form.description.id_for_label}}">Description</label>
+      {{form.description}}
+      <small id="{{form.description.id_for_label}}-error" class="form-text text-muted">{{form.price.errors}}</small>
+    </div>
+    <div class="form-group">
+      <label for="{{form.price.id_for_label}}">Price</label>
+      {{form.price}}
+      <small id="{{form.price.id_for_label}}-error" class="form-text text-muted" value="{{obj.price}}">{{form.price.errors}}</small>
+    </div>
+    <button name="" id="" class="btn btn-primary" role="submit">Save</button>
+ </form>
+{% endblock %} 

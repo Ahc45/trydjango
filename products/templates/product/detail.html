@@ -1,0 +1,8 @@
+ {% extends 'base.html' %}
+{% block content%}
+ <h2>  Product : {{obj.title}} </h2>
+ <p>Description : {{obj.description}}
+ </p>
+{% include 'product/form.html' %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+ {% extends 'base.html' %}
+{% block content%}
+    <div class="jumbotron">
+        <h1 class="display-3">Jumbo heading</h1>
+        <p class="lead">Jumbo helper text</p>
+        <hr class="my-2">
+        <h3>Hello {{name}} !!</h3>
+        <p class="lead ">
+            call me on this number : <small>{{phone}}</small>
+        </p>
+    </div>
+        <ul>
+        {% for list in lists  %}
+            <li> {{list}} </li>
+        {% endfor %}
+        </ul>
+        <small> rendered as html</small>
+        {{html_tag|safe}}
+{% endblock %}
